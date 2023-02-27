@@ -1,1 +1,8 @@
-import "https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js";
+function deleteNote(noteId) {
+	fetch("/delete-note", {
+		method: "POST",
+		body: JSON.stringify({ noteId: noteId }),
+	}).then((_res) => {
+		window.location.href = "/notes";
+	});
+}
