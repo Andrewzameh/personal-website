@@ -23,7 +23,8 @@ class Note(db.Model):
 
 class AiEmail(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    input = db.Column(db.String(10000))
+    userPrompt = db.Column(db.String(10000))
+    initPrompt = db.Column(db.NVARCHAR(20000))
     style = db.Column(db.String(32))
     output = db.Column(db.String(32000))
     tokens = db.Column(db.Integer)

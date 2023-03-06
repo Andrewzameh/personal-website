@@ -21,4 +21,9 @@
 	</div>
 	<div class="card-footer text-muted mb-2">{{ note.date }}</div>
 </div>
-{% endfor %} {% endblock %}
+{% endfor %} {% endblock %} {% block js %}
+<script
+	type="text/javascript"
+	src="{{ url_for('static', filename='note.js') }}"
+></script>
+{% endblock %}

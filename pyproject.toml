@@ -9,7 +9,7 @@ packages = [{include = "personal_website"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 flask = "^2.2.3"
-openai = "^0.26.5"
+openai = "^0.27.0"
 flask-login = "^0.6.2"
 flask-sqlalchemy = "^3.0.3"
 flask-restx = "^1.0.6"

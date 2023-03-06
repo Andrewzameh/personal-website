@@ -8,7 +8,7 @@ db = SQLAlchemy()
 
 DB_NAME = "database.db"
 
-with open("/mnt/sdb3/Code/Projects/personal-website/config.json") as f:
+with open("/mnt/sdb3/Code/Projects/personal-website-config.json") as f:
     config = json.load(f)
 
 SECRET_KEY = config["SECRET_KEY"]
@@ -20,7 +20,7 @@ def create_app():
     app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{DB_NAME}"
     db.init_app(app)
 
-    from .aiemail import aiemail
+    from .ai import ai
     from .auth import auth
     from .models import User
     from .views import views
@@ -38,6 +38,6 @@ def create_app():
 
     app.register_blueprint(views, url_prefix="/")
     app.register_blueprint(auth, url_prefix="/")
-    app.register_blueprint(aiemail, url_prefix="/")
+    app.register_blueprint(ai, url_prefix="/")
 
     return app

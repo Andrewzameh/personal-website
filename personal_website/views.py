@@ -34,6 +34,11 @@ def notes():
     return render_template("notes.html", user=current_user)
 
 
+@views.route("/company-score")
+def company_score():
+    return render_template("companyScore.html", user=current_user)
+
+
 @views.route("/delete-note", methods=["POST"])
 @login_required
 def delete_note():
