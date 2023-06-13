@@ -1,0 +1,38 @@
+{% extends "index.html" %} {% block title %}QA Bot{% endblock %} {% block
+css %}
+<link href="../static/QA.css" rel="stylesheet" />
+{% endblock %} {% block main %}
+
+<div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1>QA Bot</h1>
+</div>
+  <div class="container">
+    <div class="mode-select">
+      <input type="radio" name="mode" id="mode-normal" checked value="innquest"> 
+      <label for="mode-normal">InnQuest</label>
+
+      <input type="radio" name="mode" id="mode-fancy" value="speech">
+      <label for="mode-fancy">Speech</label>
+
+      <input type="radio" name="mode" id="mode-cool" value="ssa">
+      <label for="mode-cool">SSA</label>
+
+      <input type="radio" name="mode" id="mode-LS" value="lightspeed">
+      <label for="mode-LS">LightSpeed</label>
+
+    </div>
+
+    <div class="question-input">
+      <label for="question">Ask a question:</label>
+      <input name="question" type="text" id="question" class="form-control">
+    </div>
+
+    <button class="btn btn-primary my-4" id="submit" type="submit" value="Send">Submit</button>
+
+      <p id="stream-text"></p>
+  </div>
+
+{% endblock %} {% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='QA.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "index.html" %} {% block title %}ChatGPT Bot{% endblock %} {% block
+css %}
+<link href="../static/conv.css" rel="stylesheet" />
+{% endblock %} {% block main %}
+			<div
+				class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+				<h1>ASR</h1>
+			</div>
+<div class="page-content page-container" id="page-content">
+	<div class="padding">
+		<div class="d-flex justify-content-center mb-3">
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="mode" id="mode1" value="transcribe" checked>
+				<label class="form-check-label" for="exampleRadios1">
+				Transcribe
+				</label>
+			</div>
+			<div class="form-check form-check-inline">
+				<input class="form-check-input" type="radio" name="mode" id="mode2" value="translate">
+				<label class="form-check-label" for="exampleRadios2">
+				Translate
+				</label>
+			</div>
+		</div>
+		<div class="row container d-flex justify-content-center">
+			<div class="input-group mb-3">
+				<input type="file" class="form-control" id="file">
+				<label class="input-group-text" for="inputGroupFile02"></label>
+			</div>
+			<select class="form-select mb-3" aria-label="Default select example" id="lang">
+				<option selected>Language</option>
+				<option value=''>Auto</option>
+				<option value="en">English</option>
+				<option value="de">German</option>
+				<option value="sp">Spanish</option>
+			</select>
+			<select class="form-select mb-3" aria-label="Default select example" id="output">
+				<option value='txt' selected>Output mode</option>
+				<option value='txt' >txt</option>
+				<option value="vtt">vtt</option>
+				<option value="srt">srt</option>
+				<option value="json">json</option>
+			</select>
+			<button id="sendButton" type="submit" value="Send" class="btn btn-danger mb-3">Generate Email</button>
+		</div>
+		<p id="stream-text"></p>
+	</div>
+</div>
+{% endblock %} {% block js %}
+<script type="text/javascript" src="{{ url_for('static', filename='voice.js') }}"></script>
+{% endblock %}
